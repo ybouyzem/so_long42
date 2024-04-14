@@ -6,12 +6,17 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/14 06:07:59 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/14 23:51:37 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	ft_error()
+{
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}
 
 void    ft_freestrs(char **str)
 {
