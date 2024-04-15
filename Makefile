@@ -6,7 +6,7 @@
 #    By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/13 02:20:58 by ybouyzem          #+#    #+#              #
-#    Updated: 2024/04/15 01:02:42 by ybouyzem         ###   ########.fr        #
+#    Updated: 2024/04/15 20:19:06 by ybouyzem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,10 @@ MAN_OBJS = $(MAN_C:.c=.o)
 NAME = so_long
 
 $(NAME) : $(MAN_OBJS)
-	cc -Wall -Wextra -Werror  $(MAN_OBJS) -o so_long
+	cc -Wall -Wextra -Werror $(MAN_OBJS) -o so_long
+
 %.o : %.c so_long.h
-	cc -Wall -Wextra -Werror  -c $< -o $@
+	cc -Wall -Wextra -Werror -c $< -o $@
 	
 all : $(NAME)
 

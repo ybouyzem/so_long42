@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/14 06:08:06 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:10:12 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,4 @@ void	map_parssing(char *path);
 void    ft_freestrs(char **str);
 char	**ft_split(char  *s, char c);
 int	count_words(const char *s, char charset);
+int	ft_check_newline(char *str, int c);

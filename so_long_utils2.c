@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/15 01:01:48 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:10:02 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,22 @@ void	ft_error()
 {
 	write(1, "Error\n", 6);
 	exit(EXIT_FAILURE);
+}
+
+int	ft_check_newline(char *str, int c)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+	{
+		if (str[i] == (char) c)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 void    ft_freestrs(char **str)

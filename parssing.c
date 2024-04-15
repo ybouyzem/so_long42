@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/15 03:03:04 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:18:02 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_check(int check_e, int check_p, int check_c, char **map)
 		while (map[i][j])
 		{
 			if ((i == 0 || map[i + 1] == 0 || j == 0 || map[i][j + 1] == '\0' 
-			|| !check_chars(map[i][j])) && map[i][j] != '1')
+			|| !check_chars(map[i][j])) && map[i][j] != '1' && map[i][j] != '\n')
 					(ft_freestrs(map), ft_error());
 			else if (map[i][j] == 'P')
 				check_p++;

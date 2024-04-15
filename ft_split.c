@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 00:29:26 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/15 03:01:16 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:13:55 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_get_content(char *path)
 		len = read(fd, str, 1);
 		if (len == -1)
 			return (free(str), free(content), NULL);
-		str[len] = '\0';		
+		str[len] = '\0';
 		content = ft_strjoin(content, str);
 	}
 	return(free(str), content);
@@ -45,12 +45,14 @@ int	count_words(const char *s, char charset)
 
 	i = 0;
 	nbr = 0;
+	if (s[i] == charset)
+		nbr++;
 	while (s[i])
 	{
-		while (s[i] && s[i] == charset)
-			i++;
 		if (s[i] != '\0')
 			nbr++;
+		if (s[i] && s[i] == charset)
+			i++;
 		while (s[i] && s[i] != charset)
 			i++;
 	}
@@ -67,7 +69,7 @@ static char	*ft_mystrdup( const char *s, char charset)
 	lw = 0;
 	while (s[lw] && s[lw] != charset)
 		lw++;
-	r = (char *)malloc(lw + 1);
+	r = (char *)malloc(lw + 2);
 	if (r == NULL)
 		return (NULL);
 	while (i < lw)
@@ -75,6 +77,8 @@ static char	*ft_mystrdup( const char *s, char charset)
 		r[i] = s[i];
 		i++;
 	}
+	// if (s[i] == '\n')
+		r[i++] = '\n';
 	r[i] = '\0';
 	return (r);
 }
@@ -115,8 +119,6 @@ char	**ft_split(char *s, char c)
 	result = ft_allocate(count_words(s, c));
 	while (*s)
 	{
-		while (*s && *s == c)
-			s++;
 		if (*s != '\0')
 		{
 			tmp = ft_mystrdup(s, c);
@@ -127,6 +129,8 @@ char	**ft_split(char *s, char c)
 		}
 		while (*s && *s != c)
 			s++;
+		if (*s == '\n')
+		 	s++;
 	}
 	result[index] = 0;
 	return (result);
