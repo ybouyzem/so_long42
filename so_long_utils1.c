@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:29:42 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/14 06:01:45 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/15 02:52:21 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_strlen(char *str)
 {
 	int	i;
 	
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 		i++;

@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 00:29:26 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/14 06:02:00 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/15 03:01:16 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_get_content(char *path)
 	
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
-		perror("error opening this file\n");
+		(perror("can't open this file "), exit(EXIT_FAILURE));
 	len = 1;
 	str = (char *)malloc(sizeof(char) + 1);
 	if (!str)
@@ -32,7 +32,7 @@ char	*ft_get_content(char *path)
 		len = read(fd, str, 1);
 		if (len == -1)
 			return (free(str), free(content), NULL);
-		str[len] = '\0';
+		str[len] = '\0';		
 		content = ft_strjoin(content, str);
 	}
 	return(free(str), content);
