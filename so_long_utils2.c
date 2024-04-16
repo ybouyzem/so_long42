@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/15 19:10:02 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:36:05 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,20 @@ void    ft_freestrs(char **str)
 		i++;
 	}
 	free(str);
+}
+
+int	ft_count_newline(char *str)
+{
+	int	i;
+	int	nb;
+
+	i = 0;
+	nb = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			nb++;
+		i++;
+	}
+	return (nb);
 }
