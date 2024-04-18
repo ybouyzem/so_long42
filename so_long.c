@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:05 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/16 17:27:51 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:46:30 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void printstrs(char **map)
 			printf("%c", map[i][j]);
 			j++;	
 		}
+		printf("\n");
 		i++;
 	}
 }

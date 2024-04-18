@@ -6,21 +6,21 @@
 #    By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/13 02:20:58 by ybouyzem          #+#    #+#              #
-#    Updated: 2024/04/16 16:55:19 by ybouyzem         ###   ########.fr        #
+#    Updated: 2024/04/18 14:47:14 by ybouyzem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MAN_C = so_long.c parssing.c so_long_utils1.c so_long_utils2.c  ft_split.c\
+MAN_C = so_long.c parssing.c so_long_utils1.c so_long_utils2.c ft_split.c floodfill.c\
 
 MAN_OBJS = $(MAN_C:.c=.o)
 
 NAME = so_long
 
 $(NAME) : $(MAN_OBJS)
-	cc -Wall -Wextra -Werror -fsanitize=address $(MAN_OBJS) -o so_long
+	cc -Wall -Wextra -Werror  $(MAN_OBJS) -o so_long
 
 %.o : %.c so_long.h
-	cc -Wall -Wextra -Werror -fsanitize=address -c $< -o $@
+	cc -Wall -Wextra -Werror  -c $< -o $@
 	
 all : $(NAME)
 

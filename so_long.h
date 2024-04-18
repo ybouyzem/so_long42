@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/16 16:37:58 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:48:52 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+
+typedef struct s_point {
+    int x;
+    int y;
+} t_point;
 
 void	ft_error();
 int     ft_strlen(char *str);
@@ -31,6 +36,9 @@ char	**ft_split(char  *s, char c);
 int	    count_words(const char *s, char charset);
 int	    ft_check_newline(char *str, int c);
 int     ft_count_newline(char *str);
-
+void	ft_get_player_position(t_point *c,  char **map);
+void    floodfill(char **map, int x, int y, int linelength);
+int     ft_strslen(char **str);
+void	check_boundaries(char **map);
 
 void printstrs(char  **map);

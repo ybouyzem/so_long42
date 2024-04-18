@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/16 16:36:05 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:37:29 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@ void	ft_error()
 {
 	write(1, "Error\n", 6);
 	exit(EXIT_FAILURE);
+}
+
+int	ft_strslen(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 int	ft_check_newline(char *str, int c)
