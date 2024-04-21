@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 00:29:26 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/16 16:52:39 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:17:54 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char	*ft_get_content(char *path)
 	int	i;
 	int	nbr;
 
+	if (!s)
+		return (0);
 	i = 0;
 	nbr = 0;
 	while (s[i])

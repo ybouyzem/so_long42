@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/18 16:49:40 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:20:02 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	map_parssing(char *path)
 	content = ft_get_content(path);
 	map = ft_split(content, '\n');
 	if (count_words(content, '\n') < 3)
-		(ft_freestrs(map),ft_error());
+		(ft_freestrs(map), ft_error());
 	if (count_words(content, '\n') - 1 != ft_count_newline(content))
 		(ft_freestrs(map), ft_error());
 	ft_check_strlen(map);

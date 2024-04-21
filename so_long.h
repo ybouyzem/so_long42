@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/18 16:48:52 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:20:17 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef struct s_point {
     int x;
     int y;
 } t_point;
+
 
 void	ft_error();
 int     ft_strlen(char *str);

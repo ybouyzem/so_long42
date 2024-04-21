@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/18 16:37:29 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:19:19 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void    ft_freestrs(char **str)
 {
 	int i;
 	
+	if (!str)
+		return ;
 	i = 0;
 	while (str[i])
 	{
