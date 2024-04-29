@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:05 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/21 17:17:01 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:35:20 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int	main(int argc, char **argv)
 	mlx = mlx_init();
 	if (!mlx)
 		return (0);
-	show_window(mlx, map);
+	
+	//show_window(mlx, map);
 	//leaks();
 }
