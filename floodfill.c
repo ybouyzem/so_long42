@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:39:15 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/29 16:39:34 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:34:33 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	check_boundaries(char **map)
 	int	i;
 	int	j;
 	i = 0;
-	printstrs(map);
 	while (map[i])
 	{
 		j = 0;
