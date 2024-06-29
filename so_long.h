@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/21 17:12:25 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/06/29 11:51:58 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,39 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
-#include <mlx.h>
+#include "include/MLX42/MLX42.h"
+#define grade 50
+#define width 70
+#define height 70
 
 typedef struct s_point {
     int x;
     int y;
 } t_point;
 
-typedef struct s_icons {
-    void    *player_img;
-    void    *exit_img;
-    void    *collective_img;
-    void    *wall_img;
-    void    *road_img;
-} t_icons;
+typedef struct s_map {
+    char    **map;
+    int     c;
+    int     nbr_collective;
+    int    exit;
+    t_point player_pos;
+} t_map;
+
+typedef struct s_mlx {
+    mlx_t    *mlx_ptr;
+    int     width_win;
+    int     height_win;
+    mlx_texture_t    *player_txt;
+    mlx_texture_t    *exit_txt;
+    mlx_texture_t    *collective_txt;
+    mlx_texture_t    *wall_txt;
+    mlx_texture_t    *road_txt;
+    mlx_image_t    *player_img;
+    mlx_image_t    *exit_img;
+    mlx_image_t    *collective_img;
+    mlx_image_t    *wall_img;
+    mlx_image_t    *road_img; 
+} t_mlx;
 
 void	ft_error();
 int     ft_strlen(char *str);
@@ -49,5 +68,11 @@ void	ft_get_player_position(t_point *c,  char **map);
 void    floodfill(char **map, int x, int y, int linelength);
 int     ft_strslen(char **str);
 void	check_boundaries(char **map);
+// void    ft_convert_images(void *mlx, t_icons *t);
+// void    ft_render_map(void *mlx, void *win, char **map, t_icons game);
+
+void init_txts(t_mlx game);
+void resize_imgs(t_mlx game);
+void init_imgs(t_mlx game);
 
 void printstrs(char  **map);

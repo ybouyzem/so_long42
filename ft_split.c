@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 00:29:26 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/21 16:17:54 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:30:03 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,30 @@
 
 char	*ft_get_content(char *path)
 {
-	char    *str;
 	char	*content;
-	content = NULL;
+	char	c;
 	int     len;
 	int		fd;
 	
+	len = 0;
 	fd = open(path, O_RDONLY);
-	if (fd == -1)
+	if (fd < 0)
 		(perror("can't open this file "), exit(EXIT_FAILURE));
-	len = 1;
-	str = (char *)malloc(sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	while (len != 0)
+	while (read(fd, &c, 1))
+		len++;
+	close(fd);
+	content = (char *)malloc((len + 1) * sizeof(char));
+	if (!content)
 	{
-		len = read(fd, str, 1);
-		if (len == -1)
-			return (free(str), free(content), NULL);
-		str[len] = '\0';
-		content = ft_strjoin(content, str);
+		write(2, "fail of map allocation!", 24);
+		exit(1);
 	}
-	return(free(str), content);
+	fd = open(path, O_RDONLY);
+	read(fd, content, len);
+	content[len] = '\0';
+	close(fd);
+	return(content);
 }
-
-// int	count_words(const char *s, char charset)
-// {
-// 	int	i;
-// 	int	nbr;
-
-// 	i = 0;
-// 	nbr = 0;
-// 	if (s[i] == charset)
-// 		nbr++;
-// 	while (s[i])
-// 	{
-// 		if (s[i] != '\0')
-// 			nbr++;
-// 		if (s[i] && s[i] == charset)
-// 			i++;
-// 		while (s[i] && s[i] != charset)
-// 			i++;
-// 	}
-// 	return (nbr);
-// }
 
  int	count_words(const char *s, char charset)
 {

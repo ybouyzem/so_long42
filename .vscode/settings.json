@@ -1,7 +1,10 @@
 {
     "files.associations": {
         "so_long.h": "c",
-        "ios": "c"
+        "ios": "c",
+        "sstream": "c",
+        "mlx.h": "c",
+        "mlx42.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
