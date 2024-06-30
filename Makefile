@@ -6,11 +6,11 @@
 #    By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/13 02:20:58 by ybouyzem          #+#    #+#              #
-#    Updated: 2024/06/29 12:11:07 by ybouyzem         ###   ########.fr        #
+#    Updated: 2024/06/30 00:09:40 by ybouyzem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MAN_C = so_long.c parssing.c so_long_utils1.c so_long_utils2.c so_long_utils3.c ft_split.c floodfill.c images_utils.c\
+MAN_C = so_long.c parssing.c so_long_utils1.c so_long_utils2.c ft_split.c floodfill.c images_utils.c map_utils.c\
 
 MAN_OBJS = $(MAN_C:.c=.o)
 

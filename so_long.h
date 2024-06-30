@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/06/29 11:51:58 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/06/30 06:01:17 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <fcntl.h>
 #include "include/MLX42/MLX42.h"
 #define grade 50
-#define width 70
-#define height 70
+#define width 50
+#define height 50
 
 typedef struct s_point {
     int x;
@@ -33,6 +33,7 @@ typedef struct s_map {
 } t_map;
 
 typedef struct s_mlx {
+    t_map *map;
     mlx_t    *mlx_ptr;
     int     width_win;
     int     height_win;
@@ -71,8 +72,11 @@ void	check_boundaries(char **map);
 // void    ft_convert_images(void *mlx, t_icons *t);
 // void    ft_render_map(void *mlx, void *win, char **map, t_icons game);
 
-void init_txts(t_mlx game);
-void resize_imgs(t_mlx game);
-void init_imgs(t_mlx game);
+void init_txts(t_mlx *game);
+void resize_imgs(t_mlx *game);
+void init_imgs(t_mlx *game);
+void render_map(t_mlx *game);
+void    update_map(t_mlx *game,  int new_y, int new_x);
+int check_next_step(t_mlx *game, int y, int x);
 
 void printstrs(char  **map);
