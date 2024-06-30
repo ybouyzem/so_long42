@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/06/30 06:01:17 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/06/30 23:41:02 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,6 @@ void init_imgs(t_mlx *game);
 void render_map(t_mlx *game);
 void    update_map(t_mlx *game,  int new_y, int new_x);
 int check_next_step(t_mlx *game, int y, int x);
+void count_collectives(t_mlx *game);
 
 void printstrs(char  **map);

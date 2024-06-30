@@ -6,13 +6,36 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 23:09:56 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/06/30 06:01:30 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/06/30 23:53:14 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void render_image(t_mlx *game, void *image, int x, int y)
+void count_collectives(t_mlx *game)
+{
+    int i;
+    int j;
+    int nb_c;
+
+    nb_c = 0;
+    i = 0;
+    while (game->map->map[i])
+    {
+        j = 0;
+        while (game->map->map[i][j])
+        {
+            if (game->map->map[i][j] == 'C')
+                nb_c++;
+            j++;
+        }
+        i++;
+    }
+    game->map->c = nb_c;
+    game->map->nbr_collective = nb_c;
+}
+
+void render_image(t_mlx *game, mlx_image_t *image, int x, int y)
 {
     if (mlx_image_to_window(game->mlx_ptr, image, x * grade, y * grade) < 0)
         exit(1);
@@ -46,14 +69,15 @@ void render_map(t_mlx *game)
 
 int check_next_step(t_mlx *game, int y, int x)
 {
-    if (game->map->map[y][x] == '0')
+		
+    if (game->map->map[x][y] == '0')
         return (1);
     else if (game->map->map[y][x] == 'C')
     {
-        game->map->nbr_collective--;
+        game->map->c--;
         return (1);
     }
-    else if (game->map->map[y][x] == 'E' && game->map->nbr_collective == 1)
+    else if (game->map->map[y][x] == 'E' && game->map->c == 0)
         mlx_close_window(game->mlx_ptr);
     return (0);
 }

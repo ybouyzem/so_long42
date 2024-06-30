@@ -50,8 +50,13 @@ void	key_press(mlx_key_data_t keydata, void *param)
 	if (keydata.key == MLX_KEY_ESCAPE)
 		mlx_close_window(game->mlx_ptr);
 	if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
+	{
 		if (check_next_step(game , y - 1, x))
+		{
+			printf("next pos checked\n");
 			update_map(game, y - 1, x);
+		}
+	}
 	if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
 		if (check_next_step(game , y + 1, x))
 			update_map(game, y + 1, x);
@@ -92,6 +97,8 @@ int	main(int argc, char **argv)
 	// printf("colls: %d\n", map.nbr_collective);
 	game.width_win = ft_strlen(map.map[1]) * width;
 	game.height_win = ft_strslen(map.map) * height;
+	count_collectives(&game);
+	game.map->exit = 0;
 	game.mlx_ptr = mlx_init(game.width_win, game.height_win,"so_long", false);
 	if (!game.mlx_ptr)
 		return (0);
