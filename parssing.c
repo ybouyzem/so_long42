@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/06/30 23:23:08 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/02 00:42:47 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void ft_check_strlen(char **map)
 	while (map[i+1])
 	{
 		if (ft_strlen(map[i]) != ft_strlen(map[i + 1]))
-			ft_error();
+			(ft_freestrs(map), ft_error());
 		i++;
 	}
 }
@@ -90,8 +90,9 @@ void	map_parssing(char *path)
 	ft_check_strlen(map);
 	ft_check(0, 0, 0, map);
 	ft_get_player_position(&c,map);
+	
 	tmp = map;
-	floodfill(tmp, c.x, c.y, ft_strlen(map[0]));
-	check_boundaries(tmp);
+	// floodfill(tmp, c.x, c.y, ft_strlen(map[0]));
+	// check_boundaries(tmp);
 	(free(content), ft_freestrs(map));
 }

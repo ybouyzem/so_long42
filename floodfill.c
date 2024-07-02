@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:39:15 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/05/01 11:34:33 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/01 23:48:41 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 void	ft_get_player_position(t_point *c, char **map)
 {
-	int i;
-	int j;
+	int x;
+	int y;
 
-	i = 0;
-	while (map[i])
+	y = 0;
+	while (map[y])
 	{
-		j = 0;
-		while (map[i][j])
+		x = 0;
+		while (map[y][x])
 		{
-			if (map[i][j] == 'P')
+			if (map[y][x] == 'P')
 			{
-				c->x = i;
-				c->y = j;
+				c->x = x;
+				c->y = y;
 			}
-			j++;	
+			x++;	
 		}
-		i++;
+		y++;
 	}
 }
 

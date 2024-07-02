@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 23:09:56 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/06/30 23:53:14 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/02 00:52:18 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void render_map(t_mlx *game)
 {
     int x;
     int y;
-
+    
     y = 0;
     while (game->map->map[y])
     {
@@ -69,15 +69,15 @@ void render_map(t_mlx *game)
 
 int check_next_step(t_mlx *game, int y, int x)
 {
-		
-    if (game->map->map[x][y] == '0')
+
+    if (game->map->map[y][x] == '0')
         return (1);
     else if (game->map->map[y][x] == 'C')
     {
         game->map->c--;
         return (1);
     }
-    else if (game->map->map[y][x] == 'E' && game->map->c == 0)
+    else if (game->map->map[y][x] == 'E' && game->map->c == 0)//free all
         mlx_close_window(game->mlx_ptr);
     return (0);
 }
@@ -93,5 +93,6 @@ void    update_map(t_mlx *game, int new_y, int new_x)
     game->map->map[new_y][new_x] = 'P';
     game->map->player_pos.y = new_y;
     game->map->player_pos.x = new_x;
-    render_image(game, game->player_img, new_y, new_x);
+    render_image(game, game->player_img, new_x, new_y);
+    render_image(game, game->road_img, x, y);
 }
