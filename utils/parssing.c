@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 03:57:39 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 04:13:36 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,25 +74,24 @@ void	ft_check(int check_e, int check_p, int check_c, char **map)
 		(ft_freestrs(map),ft_error());
 }
 
-void	map_parssing(char *path, t_map **map)
+void	map_parssing(char *path, t_map *my_map)
 {
 	char	*content;
-	char	**map;
+	t_map	map;
 	t_point c;
 	
 	content = ft_get_content(path);
-	map = ft_split(content, '\n');
-	map->map = map;
+	map.map = ft_split(content, '\n');
+	my_map = &map;
 	if (count_words(content, '\n') < 3)
-		(ft_freestrs(map), ft_error());
+		(ft_freestrs(map.map), ft_error());
 	if (count_words(content, '\n') - 1 != ft_count_newline(content))
-		(ft_freestrs(map), ft_error());
-	ft_check_strlen(map);
-	ft_check(0, 0, 0, map);
-	ft_get_player_position(&c,map);
-	
+		(ft_freestrs(map.map), ft_error());
+	ft_check_strlen(map.map);
+	ft_check(0, 0, 0, map.map);
+	ft_get_player_position(&c,map.map);
 
 	// floodfill(tmp, c.x, c.y, ft_strlen(map[0]));
 	// check_boundaries(tmp);
-	(free(content), ft_freestrs(map));
+	(free(content), ft_freestrs(map.map));
 }

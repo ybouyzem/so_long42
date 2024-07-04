@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 03:58:01 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 04:10:48 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_get_content(char *path);
 
 void    path_parssing(char *path);
-void	map_parssing(char *path, t_map **map);
+void	map_parssing(char *path, t_map *map);
 void	key_press(mlx_key_data_t keydata, void *param);
 
 void    ft_freestrs(char **str);

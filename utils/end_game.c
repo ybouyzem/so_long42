@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 01:09:32 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 03:06:57 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 04:14:56 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void    ft_freestrs(char **str)
 	int i;
 	
 	if (!str)
+    {
+        printf("warah khawya \n");
 		return ;
+    }
 	i = 0;
 	while (str[i])
 	{
