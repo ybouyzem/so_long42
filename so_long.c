@@ -38,32 +38,7 @@ void printstrs(char **map)
 }
 
 
-static void	show_window(t_mlx *game, char **argv)
-{
-	t_map map;
-	char	*content;
 
-	content = ft_get_content(argv[1]);
-	map.map = ft_split(content, '\n');
-	free(content);
-	if (!map.map)
-	{
-		(ft_freestrs(map.map), write(1, "map failed!\n", 12));
-		exit(1);
-	}
-	game->map = &map;
-	ft_get_player_position(&game->map->player_pos, game->map->map);
-	game->width_win = ft_strlen(game->map->map[1]) * width;
-	game->height_win = ft_strslen(game->map->map) * height;
-	count_collectives(game);
-	game->mlx_ptr = mlx_init(game->width_win, game->height_win,"so_long", false);
-	if (!game->mlx_ptr)
-		free_game(game, "mlx failed\n");
-	init_imgs(game);
-	render_map(game);
-	mlx_key_hook(game->mlx_ptr, key_press, game);
-	mlx_loop(game->mlx_ptr);
-}
 
 static void parssing(int argc, char **argv)
 {

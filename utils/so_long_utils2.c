@@ -6,16 +6,43 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 01:56:40 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:29:29 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_error()
+void	ft_error(void)
 {
 	write(1, "Error parssing\n", 6);
 	exit(EXIT_FAILURE);
+}
+
+char	*ft_get_content(char *path)
+{
+	char	*content;
+	char	c;
+	int		len;
+	int		fd;
+
+	len = 0;
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		(perror("can't open this file "), exit(EXIT_FAILURE));
+	while (read(fd, &c, 1))
+		len++;
+	close(fd);
+	content = (char *)malloc((len + 1) * sizeof(char));
+	if (!content)
+	{
+		write(2, "fail of map allocation!", 24);
+		exit(1);
+	}
+	fd = open(path, O_RDONLY);
+	read(fd, content, len);
+	content[len] = '\0';
+	close(fd);
+	return (content);
 }
 
 int	ft_strslen(char **str)

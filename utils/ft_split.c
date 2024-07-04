@@ -6,38 +6,12 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 00:29:26 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/03 00:38:37 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:27:39 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-char	*ft_get_content(char *path)
-{
-	char	*content;
-	char	c;
-	int     len;
-	int		fd;
-	
-	len = 0;
-	fd = open(path, O_RDONLY);
-	if (fd < 0)
-		(perror("can't open this file "), exit(EXIT_FAILURE));
-	while (read(fd, &c, 1))
-		len++;
-	close(fd);
-	content = (char *)malloc((len + 1) * sizeof(char));
-	if (!content)
-	{
-		write(2, "fail of map allocation!", 24);
-		exit(1);
-	}
-	fd = open(path, O_RDONLY);
-	read(fd, content, len);
-	content[len] = '\0';
-	close(fd);
-	return(content);
-}
 
  int	count_words(const char *s, char charset)
 {

@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 04:18:14 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:34:02 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void    floodfill(char **map, int x, int y, int linelength);
 int     ft_strslen(char **str);
 void	check_boundaries(char **map);
 
+void	show_window(t_mlx *game, char **argv);
 void init_txts(t_mlx *game);
 void resize_imgs(t_mlx *game);
 void init_imgs(t_mlx *game);
