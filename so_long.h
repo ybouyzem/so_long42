@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/02 00:28:22 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 03:58:01 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_get_content(char *path);
 
 void    path_parssing(char *path);
-void	map_parssing(char *path);
+void	map_parssing(char *path, t_map **map);
+void	key_press(mlx_key_data_t keydata, void *param);
 
 void    ft_freestrs(char **str);
 char	**ft_split(char  *s, char c);
@@ -69,8 +70,6 @@ void	ft_get_player_position(t_point *c,  char **map);
 void    floodfill(char **map, int x, int y, int linelength);
 int     ft_strslen(char **str);
 void	check_boundaries(char **map);
-// void    ft_convert_images(void *mlx, t_icons *t);
-// void    ft_render_map(void *mlx, void *win, char **map, t_icons game);
 
 void init_txts(t_mlx *game);
 void resize_imgs(t_mlx *game);
@@ -79,5 +78,9 @@ void render_map(t_mlx *game);
 void    update_map(t_mlx *game,  int new_y, int new_x);
 int check_next_step(t_mlx *game, int y, int x);
 void count_collectives(t_mlx *game);
+void    delete_textures(t_mlx *game);
+void    delete_images(t_mlx *game);
+void    free_game(t_mlx *game, char *message);
+void    game_over(t_mlx *game, char *message);
 
 void printstrs(char  **map);

@@ -6,11 +6,11 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/02 00:42:47 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 03:57:39 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void    path_parssing(char *path)
 {
@@ -74,15 +74,15 @@ void	ft_check(int check_e, int check_p, int check_c, char **map)
 		(ft_freestrs(map),ft_error());
 }
 
-void	map_parssing(char *path)
+void	map_parssing(char *path, t_map **map)
 {
 	char	*content;
 	char	**map;
-	char	**tmp;
 	t_point c;
 	
 	content = ft_get_content(path);
 	map = ft_split(content, '\n');
+	map->map = map;
 	if (count_words(content, '\n') < 3)
 		(ft_freestrs(map), ft_error());
 	if (count_words(content, '\n') - 1 != ft_count_newline(content))
@@ -91,7 +91,7 @@ void	map_parssing(char *path)
 	ft_check(0, 0, 0, map);
 	ft_get_player_position(&c,map);
 	
-	tmp = map;
+
 	// floodfill(tmp, c.x, c.y, ft_strlen(map[0]));
 	// check_boundaries(tmp);
 	(free(content), ft_freestrs(map));

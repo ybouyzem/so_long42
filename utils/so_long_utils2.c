@@ -6,15 +6,15 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/21 16:19:19 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 01:56:40 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	ft_error()
 {
-	write(1, "Error\n", 6);
+	write(1, "Error parssing\n", 6);
 	exit(EXIT_FAILURE);
 }
 
@@ -42,21 +42,6 @@ int	ft_check_newline(char *str, int c)
 		i++;
 	}
 	return (0);
-}
-
-void    ft_freestrs(char **str)
-{
-	int i;
-	
-	if (!str)
-		return ;
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
 }
 
 int	ft_count_newline(char *str)

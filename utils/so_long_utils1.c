@@ -6,11 +6,11 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:29:42 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/04/15 02:52:21 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/03 00:38:58 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	ft_strlen(char *str)
 {

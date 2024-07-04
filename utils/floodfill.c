@@ -6,11 +6,11 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:39:15 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/01 23:48:41 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/03 00:38:31 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	ft_get_player_position(t_point *c, char **map)
 {
