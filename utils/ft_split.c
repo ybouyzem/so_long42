@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 00:29:26 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 23:27:39 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:51:29 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-
- int	count_words(const char *s, char charset)
+int	count_words(const char *s, char charset)
 {
 	int	i;
 	int	nbr;
@@ -103,7 +102,7 @@ char	**ft_split(char *s, char c)
 		while (*s && *s != c)
 			s++;
 		if (*s == '\n')
-		 	s++;
+			s++;
 	}
 	result[index] = 0;
 	return (result);
