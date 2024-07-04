@@ -41,8 +41,11 @@ void printstrs(char **map)
 static void	show_window(t_mlx *game, char **argv)
 {
 	t_map map;
+	char	*content;
 
-	map.map = ft_split(ft_get_content(argv[1]), '\n');
+	content = ft_get_content(argv[1]);
+	map.map = ft_split(content, '\n');
+	free(content);
 	if (!map.map)
 	{
 		(ft_freestrs(map.map), write(1, "map failed!\n", 12));
@@ -62,24 +65,24 @@ static void	show_window(t_mlx *game, char **argv)
 	mlx_loop(game->mlx_ptr);
 }
 
-static void parssing(int argc, char **argv, t_map *map)
+static void parssing(int argc, char **argv)
 {
 	if (argc != 2)
 		ft_error(argv[1]);
 	path_parssing(argv[1]);
-	map_parssing(argv[1], map);
+	map_parssing(argv[1]);
 }
 
 int	main(int argc, char **argv)
 {
-	t_mlx game;
+	t_mlx game ;
 	
-	parssing(argc, argv, game.map);
+	parssing(argc, argv);
 	show_window(&game, argv);
 	ft_freestrs(game.map->map);
 	delete_textures(&game);
 	delete_images(&game);
 	mlx_terminate(game.mlx_ptr);
-	// atexit(leaks);
+	atexit(leaks);
 }
 
