@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:05 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 00:02:59 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:37:45 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ void	printstrs(char **map)
 static void	parssing(int argc, char **argv)
 {
 	if (argc != 2)
-		ft_error(argv[1]);
+		ft_error();
 	path_parssing(argv[1]);
+
 	map_parssing(argv[1]);
 }
 
@@ -51,6 +52,7 @@ int	main(int argc, char **argv)
 
 	parssing(argc, argv);
 	show_window(&game, argv);
+
 	ft_freestrs(game.map->map);
 	delete_textures(&game);
 	delete_images(&game);

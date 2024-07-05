@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   images_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:04:14 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 23:55:14 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:34:35 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ void	init_txts(t_mlx *game)
 
 void	resize_imgs(t_mlx *game)
 {
-	if (!mlx_resize_image(game->road_img, grade, grade))
+	if (!mlx_resize_image(game->road_img, GRADE, GRADE))
 		free_game(game, "resizing road_img failed\n");
-	if (!mlx_resize_image(game->collective_img, grade, grade))
+	if (!mlx_resize_image(game->collective_img, GRADE, GRADE))
 		free_game(game, "resizing collective_img\n");
-	if (!mlx_resize_image(game->exit_img, grade, grade))
+	if (!mlx_resize_image(game->exit_img, GRADE, GRADE))
 		free_game(game, "resizing exit_img\n");
-	if (!mlx_resize_image(game->player_img, grade, grade))
+	if (!mlx_resize_image(game->player_img, GRADE, GRADE))
 		free_game(game, "resizing player_img\n");
-	if (!mlx_resize_image(game->wall_img, grade, grade))
+	if (!mlx_resize_image(game->wall_img, GRADE, GRADE))
 		free_game(game, "resizing wall_img\n");
 }
 

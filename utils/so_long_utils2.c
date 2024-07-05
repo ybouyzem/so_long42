@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 23:29:29 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:39:37 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	write(1, "Error parssing\n", 6);
+	write(1, "Error parssing\n", 15);
 	exit(EXIT_FAILURE);
 }
 

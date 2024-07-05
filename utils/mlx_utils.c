@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:25:58 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 23:58:58 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:34:25 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	show_window(t_mlx *game, char **argv)
 	}
 	game->map = &map;
 	ft_get_player_position(&game->map->player_pos, game->map->map);
-	game->width_win = ft_strlen(game->map->map[1]) * width;
-	game->height_win = ft_strslen(game->map->map) * height;
+	game->width_win = ft_strlen(game->map->map[1]) * WIDTH;
+	game->height_win = ft_strslen(game->map->map) * HEIGHT;
 	count_collectives(game);
 	game->mlx_ptr
 		= mlx_init(game->width_win, game->height_win, "so_long", false);

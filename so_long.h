@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 00:10:03 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:45:25 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int		count_words(const char *s, char charset);
 int		ft_check_newline(char *str, int c);
 int		ft_count_newline(char *str);
 void	ft_get_player_position(t_point *c, char **map);
-void	floodfill(char **map, int x, int y, int linelength);
+void	floodfill(char **map, int x, int y);
 int		ft_strslen(char **str);
 void	check_boundaries(char **map);
 

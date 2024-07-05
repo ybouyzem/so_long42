@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 23:09:56 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 23:57:02 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:34:55 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	count_collectives(t_mlx *game)
 
 void	render_image(t_mlx *game, mlx_image_t *image, int x, int y)
 {
-	if (mlx_image_to_window(game->mlx_ptr, image, x * grade, y * grade) < 0)
+	if (mlx_image_to_window(game->mlx_ptr, image, x * GRADE, y * GRADE) < 0)
 		free_game(game, "images rendering failed\n");
 }
 

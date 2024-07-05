@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parssing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 00:01:03 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:45:27 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,21 @@ void	map_parssing(char *path)
 {
 	char	*content;
 	char	**map;
+	char	**tmp;
 	t_point	c;
 
 	content = ft_get_content(path);
 	map = ft_split(content, '\n');
 	if (count_words(content, '\n') < 3)
 		(ft_freestrs(map), ft_error());
+
 	if (count_words(content, '\n') - 1 != ft_count_newline(content))
 		(ft_freestrs(map), ft_error());
 	ft_check_strlen(map);
 	ft_check(0, 0, 0, map);
+	tmp = map;
 	ft_get_player_position(&c, map);
-	// floodfill(tmp, c.x, c.y, ft_strlen(map[0]));
-	// check_boundaries(tmp);
+	floodfill(tmp, c.x, c.y);
+	check_boundaries(tmp);
 	(free(content), ft_freestrs(map));
 }

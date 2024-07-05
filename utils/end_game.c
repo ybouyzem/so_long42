@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 01:09:32 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/04 23:49:22 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/07/05 08:38:49 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	ft_freestrs(char **str)
 	int	i;
 
 	if (!str)
-	{
-		printf("warah khawya \n");
-		return ;
-	}
+		return ;	
 	i = 0;
 	while (str[i])
 	{
