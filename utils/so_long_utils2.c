@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 05:47:06 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 08:39:37 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 10:32:44 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	write(1, "Error parssing\n", 15);
+	write(1, "Error\nError parssing\n", 21);
 	exit(EXIT_FAILURE);
 }
 
@@ -28,14 +28,14 @@ char	*ft_get_content(char *path)
 	len = 0;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		(perror("can't open this file "), exit(EXIT_FAILURE));
+		(perror("Error\ncan't open this file"), exit(EXIT_FAILURE));
 	while (read(fd, &c, 1))
 		len++;
 	close(fd);
 	content = (char *)malloc((len + 1) * sizeof(char));
 	if (!content)
 	{
-		write(2, "fail of map allocation!", 24);
+		write(2, "Error\nfail of map allocation!\n", 30);
 		exit(1);
 	}
 	fd = open(path, O_RDONLY);

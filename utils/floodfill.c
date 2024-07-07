@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:39:15 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 08:57:14 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 10:15:39 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,7 @@ void	ft_get_player_position(t_point *c, char **map)
 void	floodfill(char **map, int x, int y)
 {
 	if (map[y][x] == '1' || map[y][x] == 'F' )
-	{
-
 		return ;
-	}
 	if (map[y][x] == 'E')
 	{
 		map[y][x] = 'F';
@@ -58,7 +55,7 @@ void	check_boundaries(char **map)
 {
 	int	y;
 	int	x;
-	printstrs(map);
+
 	y = 0;
 	while (map[y])
 	{

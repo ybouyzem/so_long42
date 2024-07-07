@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 23:09:56 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 08:34:55 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 10:51:45 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	count_collectives(t_mlx *game)
 void	render_image(t_mlx *game, mlx_image_t *image, int x, int y)
 {
 	if (mlx_image_to_window(game->mlx_ptr, image, x * GRADE, y * GRADE) < 0)
-		free_game(game, "images rendering failed\n");
+		free_game(game, "Error\nimages rendering failed\n");
 }
 
 void	render_map(t_mlx *game)
@@ -77,21 +77,24 @@ int	check_next_step(t_mlx *game, int y, int x)
 		return (1);
 	}
 	else if (game->map->map[y][x] == 'E' && game->map->c == 0)
-		game_over(game, "you ended the game successfuly!");
+		game_over(game, "you ended the game successfuly!\n");
 	return (0);
 }
 
 void	update_map(t_mlx *game, int new_y, int new_x)
 {
-	int	x;
-	int	y;
-
+	int			x;
+	int			y;
+	static int	moves;
+	
 	x = game->map->player_pos.x;
 	y = game->map->player_pos.y;
 	game->map->map[y][x] = '0';
 	game->map->map[new_y][new_x] = 'P';
 	game->map->player_pos.y = new_y;
 	game->map->player_pos.x = new_x;
+	ft_putnbr(++moves);
+	write(1, "\n", 1);
 	render_image(game, game->player_img, new_x, new_y);
 	render_image(game, game->road_img, x, y);
 }

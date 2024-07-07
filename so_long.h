@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 08:45:25 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 08:54:53 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void	delete_textures(t_mlx *game);
 void	delete_images(t_mlx *game);
 void	free_game(t_mlx *game, char *message);
 void	game_over(t_mlx *game, char *message);
+void	ft_putnbr(int nb);
 
 void	printstrs(char **map);

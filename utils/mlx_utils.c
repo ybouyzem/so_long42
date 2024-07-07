@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:25:58 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 08:34:25 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 10:55:58 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	show_window(t_mlx *game, char **argv)
 	free(content);
 	if (!map.map)
 	{
-		(ft_freestrs(map.map), write(1, "map failed!\n", 12));
+		(ft_freestrs(map.map), write(1, "Error\nmap failed!\n", 18));
 		exit(1);
 	}
 	game->map = &map;
@@ -33,7 +33,7 @@ void	show_window(t_mlx *game, char **argv)
 	game->mlx_ptr
 		= mlx_init(game->width_win, game->height_win, "so_long", false);
 	if (!game->mlx_ptr)
-		free_game(game, "mlx failed\n");
+		free_game(game, "Error\nmlx failed\n");
 	init_imgs(game);
 	render_map(game);
 	mlx_key_hook(game->mlx_ptr, key_press, game);
@@ -49,7 +49,7 @@ void	key_press(mlx_key_data_t keydata, void *param)
 	game = param;
 	y = game->map->player_pos.y;
 	x = game->map->player_pos.x;
-	if (keydata.key == MLX_KEY_ESCAPE)
+	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
 		game_over(game, "you escaped the game\n");
 	if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
 	{

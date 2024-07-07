@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 01:09:32 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/05 08:38:49 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 10:53:51 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,6 @@ void	free_game(t_mlx *game, char *message)
 {
 	write(1, message, ft_strlen(message));
 	ft_freestrs(game->map->map);
-	delete_textures(game);
-	delete_images(game);
-	mlx_terminate(game->mlx_ptr);
 	exit(1);
 }
 
