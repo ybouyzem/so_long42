@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:04:14 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/07 10:48:34 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 11:05:53 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ void	init_txts(t_mlx *game)
 		(write(1, "Error\nroad_txt failed\n", 22), exit(1));
 	game->collective_txt = mlx_load_png("images/burger.png");
 	if (!game->collective_txt)
-		(write(1, "Error\ncollective_txt failed\n", 28),exit(1));
+		(write(1, "Error\ncollective_txt failed\n", 28), exit(1));
 	game->exit_txt = mlx_load_png("images/exit2.png");
 	if (!game->exit_txt)
-		(write(1, "Error\nexit_txt failed\n", 22),exit(1));
+		(write(1, "Error\nexit_txt failed\n", 22), exit(1));
 	game->player_txt = mlx_load_png("images/player.png");
 	if (!game->player_txt)
-		(write(1, "Error\nplayer_txt failed\n", 24),exit(1));
+		(write(1, "Error\nplayer_txt failed\n", 24), exit(1));
 	game->wall_txt = mlx_load_png("images/wall.png");
 	if (!game->wall_txt)
-		(write(1, "Error\nwall_txt failed\n", 22),exit(1));
+		(write(1, "Error\nwall_txt failed\n", 22), exit(1));
 }
 
 void	resize_imgs(t_mlx *game)

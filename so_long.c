@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:05 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/07 10:42:39 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 11:05:29 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ft_putnbr(int nb)
 		ft_putnbr(n / 10);
 		ft_putnbr(n % 10);
 	}
-	
 }
 
 void	printstrs(char **map)
@@ -70,7 +69,6 @@ int	main(int argc, char **argv)
 
 	parssing(argc, argv);
 	show_window(&game, argv);
-
 	ft_freestrs(game.map->map);
 	delete_textures(&game);
 	delete_images(&game);

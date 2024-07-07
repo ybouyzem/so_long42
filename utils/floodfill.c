@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:39:15 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/07 10:15:39 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 11:05:14 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	floodfill(char **map, int x, int y)
 		return ;
 	}
 	map[y][x] = 'F';
-
 	floodfill(map, x - 1, y);
 	floodfill(map, x + 1, y);
 	floodfill(map, x, y - 1);

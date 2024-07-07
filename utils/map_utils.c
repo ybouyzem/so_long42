@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 23:09:56 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/07 10:51:45 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/07 11:04:34 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	update_map(t_mlx *game, int new_y, int new_x)
 	int			x;
 	int			y;
 	static int	moves;
-	
+
 	x = game->map->player_pos.x;
 	y = game->map->player_pos.y;
 	game->map->map[y][x] = '0';
