@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:25:58 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/07 10:55:58 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/08 09:43:11 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ void	show_window(t_mlx *game, char **argv)
 	game->width_win = ft_strlen(game->map->map[1]) * WIDTH;
 	game->height_win = ft_strslen(game->map->map) * HEIGHT;
 	count_collectives(game);
+	if (ft_strlen(game->map->map[0]) > 50 || ft_strslen(game->map->map) > 50)
+		(write(2, "Error\ninvalid sizes\n", 21), exit(1));
 	game->mlx_ptr
 		= mlx_init(game->width_win, game->height_win, "so_long", false);
 	if (!game->mlx_ptr)
 		free_game(game, "Error\nmlx failed\n");
-	init_imgs(game);
-	render_map(game);
+	(init_imgs(game), render_map(game));
 	mlx_key_hook(game->mlx_ptr, key_press, game);
 	mlx_loop(game->mlx_ptr);
 }
