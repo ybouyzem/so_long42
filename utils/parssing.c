@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/07 09:35:59 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/10 10:05:25 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	path_parssing(char *path)
 	i = 0;
 	if (ft_strlen(path) < 4)
 		ft_error();
-	while (path[i] && i < (int)ft_strlen(path) - 4)
+	while (path[i] && i < ft_strlen(path) - 4)
 		i++;
 	if (path[i++] != '.' || path[i++] != 'b' \
 	|| path[i++] != 'e' || path[i++] != 'r')
@@ -81,7 +81,6 @@ void	map_parssing(char *path)
 	char	**tmp;
 	t_point	c;
 
-	map = NULL;
 	content = ft_get_content(path);
 	if (count_words(content, '\n') < 3)
 		ft_error();
@@ -92,6 +91,7 @@ void	map_parssing(char *path)
 	ft_check(0, 0, 0, map);
 	tmp = map;
 	ft_get_player_position(&c, map);
+	printf("\t\n");
 	floodfill(tmp, c.x, c.y);
 	check_boundaries(tmp);
 	(free(content), ft_freestrs(map));
