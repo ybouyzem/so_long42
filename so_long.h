@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 02:21:11 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/07 08:54:53 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/13 00:15:45 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_map
 	char	**map;
 	int		c;
 	int		nbr_collective;
-	int		xit;
 	t_point	player_pos;
 }	t_map;
 

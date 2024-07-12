@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:51:33 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/07/10 10:05:25 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/07/10 10:41:12 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ void	map_parssing(char *path)
 	ft_check(0, 0, 0, map);
 	tmp = map;
 	ft_get_player_position(&c, map);
-	printf("\t\n");
 	floodfill(tmp, c.x, c.y);
 	check_boundaries(tmp);
 	(free(content), ft_freestrs(map));
